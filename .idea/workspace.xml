@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/index.html" description="&lt;h5 class=&quot;text-center&quot;&gt;&lt;i class=&quot;fa fa-star&quot;&gt;&lt;/i&gt;..." line="69" />
+    <bookmark url="file://$PROJECT_DIR$/index.html" description="&lt;h5 class=&quot;text-center&quot;&gt;&lt;i class=&quot;fa fa-star&quot;&gt;&lt;/i&gt;..." line="71" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="619c55ca-36f9-4843-be6c-9bf8428e6949" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/mdb.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/mdb.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/me.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/me1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/mdb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/mdb.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/tether.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/tether.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="$PROJECT_DIR$/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.js" afterPath="$PROJECT_DIR$/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" />
     </list>
     <ignored path="passioninfi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +30,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="32" column="148" selection-start-line="32" selection-start-column="148" selection-end-line="32" selection-end-column="148" />
+            <state relative-caret-position="90">
+              <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -232,12 +216,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1465197764591</updated>
-      <workItem from="1473497565074" duration="6361000" />
+      <workItem from="1473497565074" duration="6592000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6361000" />
+    <option name="totallyTimeSpent" value="6592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="24" width="1319" height="744" extended-state="6" />
@@ -288,8 +272,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="32" column="148" selection-start-line="32" selection-start-column="148" selection-end-line="32" selection-end-column="148" />
+        <state relative-caret-position="90">
+          <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
