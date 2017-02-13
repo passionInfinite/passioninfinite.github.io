@@ -1,0 +1,27 @@
+@import "base";
+
+.img-profile{
+  height: $profile-pic-height !important;
+  width: $profile-pic-width !important;
+}
+
+.profile-padding{
+  margin-top: 50px;
+}
+
+.margin-top-20{
+  margin-top: 20px;
+}
+
+.project-images {
+  height: 300px;
+}
+
+.img-padding-0{
+  padding: 0px !important;
+}
+
+.skill-img{
+  height: 70px;
+  width: 70px;
+}
