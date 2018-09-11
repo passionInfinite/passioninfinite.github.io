@@ -1,0 +1,31 @@
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
+.bullets {
+  margin-left: 10px;
+}
+.no-bottom-margin {
+  margin-bottom: 0;
+}
+.project-section {
+  margin-top: 2rem;
+}
+.project-right-img {
+  box-shadow: 10px 10px #a8a8a8;
+  transform: skew(-24deg, 8deg);
+}
+.project-left-img {
+  box-shadow: -10px 10px #a8a8a8;
+  transform: skew(25deg, -12deg);
+}
+.margin-top-4 {
+  margin-top: 4rem;
+}
+.skill-img {
+  height: 70px;
+  width: 70px;
+}
+.margin-top-2 {
+  margin-top: 2rem;
+}

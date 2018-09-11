@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAQ,sCAA2B;ACEnC,YAAY;EACV,MAAM,EAAE,gBAA8B;EACtC,KAAK,EAAE,gBAA6B;;AAGtC,gBAAgB;EACd,UAAU,EAAE,IAAI;;AAGlB,cAAc;EACZ,UAAU,EAAE,IAAI;;AAGlB,eAAgB;EACd,MAAM,EAAE,KAAK;;AAGf,cAAc;EACZ,OAAO,EAAE,cAAc;;AAGzB,UAAU;EACR,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI",
-"sources": ["../scss/base.scss","../scss/resume.scss"],
-"names": [],
-"file": "resume.min.css"
-}
