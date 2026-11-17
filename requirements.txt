@@ -1,0 +1,9 @@
+torch>=2.4
+transformer_lens
+sae_lens
+nnsight
+plotly
+pandas
+jupyter
+nbformat
+nbclient
