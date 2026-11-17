@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - CNAME
+
+website:
+  title: "Passion Infinite — Model Insights"
+  description: "Research notes on AI model visibility and behaviour, using open-source models and interpretability tools."
+  site-url: https://passioninfinite.dev
+  repo-url: https://github.com/passionInfinite/passioninfinite.github.io
+  repo-actions: [issue]
+  open-graph: true
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/passionInfinite
+      - icon: rss
+        href: index.xml
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    code-fold: show
+    code-tools: true
+    highlight-style: github
+
+execute:
+  # Posts are run on your Mac and the results are committed (_freeze/).
+  # GitHub Actions never needs to download a model.
+  freeze: true

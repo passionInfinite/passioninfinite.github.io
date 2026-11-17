@@ -1,0 +1,9 @@
+---
+title: "About"
+---
+
+This blog documents independent research on **AI model visibility**: understanding what language models represent internally and why they behave the way they do.
+
+Every post starts from a concrete problem statement, tests it with interpretability tools (TransformerLens, SAELens, nnsight, Gemma Scope) on open-source models, and ships the full code so anyone can reproduce it.
+
+All experiments run locally on a MacBook (Apple Silicon, 48 GB).

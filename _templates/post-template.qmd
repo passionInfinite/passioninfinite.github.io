@@ -1,0 +1,46 @@
+---
+title: "TITLE: phrase it as the question you're answering"
+description: "One sentence on what you tested and what you found."
+date: YYYY-MM-DD
+categories: [method, topic, model]
+draft: true
+jupyter: python3
+---
+
+## Problem statement
+
+What behaviour or visibility gap are you looking at, and why does it matter?
+
+**Question:**
+**Hypothesis:**
+
+## Method
+
+- **Model:**
+- **Tool(s):** TransformerLens / SAELens / nnsight / mlx-lens
+- **Data:**
+- **Technique:** logit lens / probing / activation patching / SAE features / steering
+
+```{python}
+#| label: setup
+import torch
+from transformer_lens import HookedTransformer
+
+torch.set_grad_enabled(False)
+device = "mps" if torch.backends.mps.is_available() else "cpu"
+model = HookedTransformer.from_pretrained("gemma-2-2b", device=device, dtype=torch.float32)
+```
+
+## Results
+
+Charts and tables, each with a caption that states the takeaway.
+
+::: {.callout-note}
+## What I found
+:::
+
+## Limitations
+
+## Next
+
+## Reproduce

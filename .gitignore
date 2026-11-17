@@ -1,2 +1,8 @@
-.idea/
-/.idea/
+/.quarto/
+/_site/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+*.safetensors
+# Keep _freeze/ committed: it holds the outputs you computed on your Mac.
