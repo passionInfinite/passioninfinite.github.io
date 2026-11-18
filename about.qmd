@@ -1,5 +1,6 @@
 ---
 title: "About"
+code-tools: false
 ---
 
 This blog documents independent research on **AI model visibility**: understanding what language models represent internally and why they behave the way they do.

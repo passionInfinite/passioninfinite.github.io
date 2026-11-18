@@ -30,6 +30,9 @@ format:
     code-tools: true
     highlight-style: github
 
+language:
+  listing-page-no-matches: "The first post is on its way."
+
 execute:
   # Posts are run on your Mac and the results are committed (_freeze/).
   # GitHub Actions never needs to download a model.

@@ -1,14 +1,60 @@
 ---
-title: "Model Insights"
-subtitle: "Opening up open-source language models to see how they actually work."
+pagetitle: "Passion Infinite — Model Insights"
+page-layout: full
+title-block-banner: false
+toc: false
+code-tools: false
 listing:
+  id: posts-list
   contents: posts
   sort: "date desc"
-  type: default
-  categories: true
+  type: grid
+  grid-columns: 3
+  categories: false
   sort-ui: false
   filter-ui: false
   feed: true
-page-layout: full
-title-block-banner: true
+  max-items: 6
+  fields: [date, title, description, categories, reading-time]
 ---
+
+::: {.hero}
+::: {.hero-kicker}
+Interpretability research · open-source models · run on a laptop
+:::
+
+# Opening up language models to see how they actually work
+
+Models are increasingly trusted with real decisions, yet we can rarely see *why* they say what they say. This blog takes concrete problem statements about model behaviour and tests them directly inside open models, using interpretability tools, with all the code published so anyone can reproduce it.
+
+::: {.hero-actions}
+[Read the posts](#latest-posts){.btn .btn-primary}
+[About this project](about.qmd){.btn .btn-outline-secondary}
+:::
+:::
+
+::: {.pillars}
+::: {.pillar}
+### Where knowledge lives
+Tracing at which layer a model "knows" a fact, and what it was considering before.
+:::
+
+::: {.pillar}
+### Why models behave as they do
+Finding the internal features and circuits behind refusals, sycophancy and mistakes.
+:::
+
+::: {.pillar}
+### Steering and control
+Testing whether changing what's inside a model changes what it does.
+:::
+:::
+
+## Latest posts
+
+::: {#posts-list}
+:::
+
+::: {.toolbox}
+**Toolbox:** TransformerLens · SAELens · nnsight · Gemma Scope · Quarto. **Models:** Gemma 2, Llama, Qwen, Pythia, all on an Apple Silicon MacBook.
+:::

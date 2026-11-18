@@ -6,123 +6,150 @@ categories: [logit-lens, factual-recall, gemma, transformerlens]
 jupyter: python3
 ---
 
+<!--
+HOW TO USE THIS SKELETON
+- Work through the steps in order. Each step should run on its own before you move on.
+- Hints are in the HTML comments (like this one), so readers won't see them. Try without them first.
+- Everything inside "TODO" is yours to write, both the code and the prose.
+- Before publishing, delete every comment and TODO in this file.
+-->
+
 ## Problem statement
 
 When a model answers *"The Eiffel Tower is located in the city of ___"*, the answer comes out of the last layer, but where is it actually decided? If we can see the layer where a fact becomes the model's top guess, we get a simple, cheap window into **where knowledge lives** in the network. That matters for model visibility: it tells us where to look when we want to audit, edit or monitor what a model "knows".
 
 **Question:** At which layer does Gemma 2 2B first rank the correct answer as its top prediction, and is that layer consistent across different facts?
 
-**Hypothesis:** The answer stays unlikely through the early layers, then rises sharply somewhere in the middle-to-late layers, and the jump happens at a similar depth across facts.
+**Hypothesis:** TODO: write *your* prediction before running anything, and don't change it afterwards.
+
+<!-- Make the question yours: is there a twist you want to test? Famous vs obscure facts, places vs people, short vs long prompts? -->
+
+## Background
+
+TODO: in your own words, explain to a reader:
+
+- what the residual stream is
+- what the logit lens does
+- why it's reasonable to apply the *final* unembedding to a *middle* layer, and when that could mislead you
+
+<!--
+Reading before you write this:
+- ARENA chapter 1.2, "Intro to Mech Interp" (TransformerLens basics)
+- nostalgebraist, "interpreting GPT: the logit lens" (LessWrong, 2020), the original post
+- Neel Nanda's Mech Interp glossary, entries for "residual stream" and "unembed"
+-->
 
 ## Method
 
-The **logit lens** takes the residual stream (the running internal state) after each layer, applies the model's final layer norm and unembedding to it, and reads it as a next-token prediction. This shows what the model "would say" if it stopped at that layer.
-
 - **Model:** Gemma 2 2B (base), loaded with TransformerLens
 - **Hardware:** MacBook, Apple Silicon (MPS), 48 GB
-- **Data:** a small set of one-token factual completions
+- **Data:** TODO
+
+### Step 1: Load the model and check it knows the fact
 
 ```{python}
-#| label: setup
-import torch
-import pandas as pd
-import plotly.express as px
-from transformer_lens import HookedTransformer
-
-torch.set_grad_enabled(False)
-device = "mps" if torch.backends.mps.is_available() else "cpu"
-
-# float32 is ~10 GB for a 2B model and avoids half-precision quirks on MPS.
-model = HookedTransformer.from_pretrained("gemma-2-2b", device=device, dtype=torch.float32)
-print(f"{model.cfg.n_layers} layers, d_model={model.cfg.d_model}, device={device}")
+#| label: step1
+# TODO: load Gemma 2 2B with TransformerLens on the "mps" device,
+# give it the Eiffel Tower prompt, and print its top 5 next tokens with their probabilities.
 ```
+
+<!--
+Hints:
+- HookedTransformer.from_pretrained(...); use dtype=torch.float32 (~10 GB, avoids half-precision issues on MPS)
+- torch.set_grad_enabled(False) saves memory, since you're not training
+- the model returns logits of shape [batch, position, vocab]. Which position predicts the NEXT token?
+- model.to_string(token_id) turns an id back into text
+Check: " Paris" should be the top guess. If it isn't, investigate before going on.
+-->
+
+### Step 2: Look inside the cache
 
 ```{python}
-#| label: data
-facts = [
-    ("The Eiffel Tower is located in the city of", " Paris"),
-    ("The capital of Japan is", " Tokyo"),
-    ("The Colosseum is located in the city of", " Rome"),
-    ("Mount Fuji is in the country of", " Japan"),
-    ("The currency of the United Kingdom is the", " pound"),
-    ("Water is made of hydrogen and", " oxygen"),
-    ("The author of Romeo and Juliet is William", " Shakespeare"),
-    ("The largest planet in our solar system is", " Jupiter"),
-]
-
-# The logit lens only works cleanly when the answer is a single token.
-for prompt, answer in facts:
-    n = len(model.to_tokens(answer, prepend_bos=False)[0])
-    assert n == 1, f"{answer!r} is {n} tokens, so pick another fact"
+#| label: step2
+# TODO: run the prompt with run_with_cache, then explore the cache.
+# What keys does it have? What is the shape of the residual stream after layer 10?
 ```
+
+<!--
+Hints:
+- cache.keys() lists everything stored. Look for names containing "resid".
+- Write down what each dimension of the shape means. You'll need it in step 3.
+-->
+
+### Step 3: Read one layer as a prediction (this is the logit lens)
 
 ```{python}
-#| label: logit-lens
-def logit_lens(prompt: str, answer: str) -> pd.DataFrame:
-    target = model.to_single_token(answer)
-    _, cache = model.run_with_cache(prompt)
-    # Residual stream at the last position after every layer, with the final LayerNorm applied
-    resid, labels = cache.accumulated_resid(
-        layer=None, incl_mid=False, pos_slice=-1, apply_ln=True, return_labels=True
-    )
-    logits = resid[:, 0, :] @ model.W_U + model.b_U     # [n_layers + 1, d_vocab]
-    probs = logits.softmax(-1)
-    rank = (logits > logits[:, target, None]).sum(-1)   # 0 means it's the top guess
-    top = [model.to_string(t) for t in logits.argmax(-1)]
-    return pd.DataFrame({
-        "layer": range(len(labels)),
-        "prob": probs[:, target].cpu().numpy(),
-        "rank": rank.cpu().numpy(),
-        "top_token": top,
-        "prompt": prompt,
-        "answer": answer.strip(),
-    })
-
-results = pd.concat([logit_lens(p, a) for p, a in facts], ignore_index=True)
+#| label: step3
+# TODO: take the residual stream at layer 10, at the position that predicts the next token,
+# and turn it into a probability for every word in the vocabulary.
+# What does layer 10 "think" the answer is?
 ```
+
+<!--
+Hints:
+- The real model does: final residual -> final LayerNorm -> unembedding -> softmax. You need the same pipeline.
+- Look at model.ln_final, model.W_U and model.b_U
+- Check your pipeline: applied to the LAST layer, it should reproduce the logits from step 1.
+  If the numbers are close but not equal, that's a real Gemma 2 detail worth finding: look up
+  "final logit soft-capping" (model.cfg.output_logits_soft_cap). Does it change the RANKING of tokens?
+-->
+
+### Step 4: Every layer, one fact
+
+```{python}
+#| label: step4
+# TODO: repeat step 3 for every layer and plot P(" Paris") against layer.
+# Also record the rank of " Paris" at each layer (0 = top guess).
+```
+
+<!--
+Hints:
+- Once your manual version works, look up cache.accumulated_resid() in the TransformerLens docs
+  and compare it with your loop. They should agree.
+- Plotly: px.line(...)
+-->
+
+### Step 5: Scale up to many facts
+
+```{python}
+#| label: step5
+# TODO: build your own list of facts, run the step 4 analysis on each,
+# and collect the results in one DataFrame.
+```
+
+<!--
+Hints:
+- The logit lens is cleanest when the answer is ONE token. Check with model.to_tokens(answer, prepend_bos=False).
+- Watch the leading space: " Paris" and "Paris" are different tokens.
+- 8 facts is a sanity check. 50+ starts to say something.
+-->
 
 ## Results
 
 ```{python}
-#| label: fig-prob
-#| fig-cap: "Probability of the correct answer when each layer's residual stream is read out with the logit lens."
-fig = px.line(results, x="layer", y="prob", color="answer", markers=True,
-              labels={"prob": "P(correct answer)", "layer": "Layer"})
-fig.update_layout(height=420, legend_title_text="Answer")
-fig.show()
+#| label: fig-results
+#| fig-cap: "TODO: a caption that states the takeaway, not just what's plotted."
+# TODO: the plot that best answers your question
 ```
 
 ```{python}
-#| label: tbl-first-top1
-#| tbl-cap: "First layer where the correct answer becomes the model's top-1 prediction."
-first = (results[results["rank"] == 0]
-         .groupby("answer")["layer"].min()
-         .rename("first_top1_layer")
-         .reset_index()
-         .sort_values("first_top1_layer"))
-first
-```
-
-```{python}
-#| label: tbl-eiffel
-#| tbl-cap: "What the model would predict at each layer for the Eiffel Tower prompt."
-results[results["answer"] == "Paris"][["layer", "top_token", "prob", "rank"]]
+#| label: tbl-results
+#| tbl-cap: "TODO"
+# TODO: e.g. the first layer where each answer becomes the top-1 prediction
 ```
 
 ::: {.callout-note}
 ## What I found
-*Write this after running: Was the hypothesis right? At which layer did most facts flip to top-1? Were there outliers, and why might that be? What did early layers predict instead (generic words, related concepts)?*
+TODO: Was your hypothesis right? Where did most facts flip to top-1? Which facts were outliers, and why might that be? What did early layers predict instead?
 :::
 
 ## Limitations
 
-- The logit lens assumes every layer "speaks" in the same space as the output layer. That holds better in later layers than in early ones, so early-layer readings are rough. A **tuned lens** trains a small adapter per layer to fix this.
-- Eight hand-picked facts is a sanity check, not a study. A follow-up should use a larger factual dataset (e.g. CounterFact).
-- Seeing *when* an answer appears doesn't show *which components* produced it. That's the next step.
+TODO: what could make your conclusions wrong? Think about the assumption the logit lens makes, your dataset and its size, and the difference between *seeing when* and *knowing why*.
 
 ## Next
 
-Use **activation patching** to find which layers and attention heads are causally responsible for the jump seen here.
+TODO: what question does this raise that you'd test next?
 
 ## Reproduce
 
