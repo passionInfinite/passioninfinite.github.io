@@ -160,21 +160,21 @@ An assistant that grows alongside a researcher for years, and that they can rely
 [01]{.step-num}
 
 ### Full-stack engineer
-Startups, RBC Ventures, Ownr and Manulife: web products built end to end, from a video-editing platform to business-formation tools.
+Startups and large organizations alike: web products built end to end, from a video-editing platform to business-formation tools.
 :::
 
 ::: {.step}
 [02]{.step-num}
 
 ### Cloud engineer
-At Deloitte I wrote infrastructure-as-code (Terraform, Ansible) for a health information exchange, cutting setup from months to 40 minutes.
+Infrastructure-as-code (Terraform, Ansible) for a health information exchange, cutting environment setup from months to 40 minutes.
 :::
 
 ::: {.step}
 [03]{.step-num}
 
 ### AI engineer
-LLM agents for dental practices at Resonate AI, then agentic AI for security at RBC as a Principal AI Engineer.
+LLM agents for healthcare practices, then agentic AI for application security at enterprise scale.
 :::
 
 ::: {.step .step-now}
@@ -189,7 +189,7 @@ Looking inside the model itself, to understand *why* it does what it does.
 ::: {.reveal}
 ## What I build in AI {.section-title}
 
-At RBC I lead a shift-left security transformation built on agentic AI: pipelines that take a product from **vulnerability discovery to automated remediation**, while keeping thousands of developers in the loop without breaking their flow. The aim is to reach 10,000+ engineers, and to get ready for a world where AI increasingly finds and exploits vulnerabilities on its own.
+In my day job I lead a shift-left security transformation built on agentic AI: pipelines that take a product from **vulnerability discovery to automated remediation**, while keeping thousands of developers in the loop without breaking their flow. The aim is to scale it across a large engineering organization, and to get ready for a world where AI increasingly finds and exploits vulnerabilities on its own.
 
 ::: {.pillars}
 ::: {.pillar}
@@ -268,7 +268,7 @@ Subscribe through [RSS](index.xml), or connect on [LinkedIn](https://www.linkedi
 ::: {.toolbox}
 **Toolbox:** TransformerLens · SAELens · nnsight · Gemma Scope · Quarto. **Models:** Gemma 2, Llama, Qwen, Pythia, all on an Apple Silicon MacBook.
 
-Views are my own and do not represent my employer.
+Views are my own.
 :::
 
 ```{=html}
