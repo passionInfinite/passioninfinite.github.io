@@ -3,9 +3,10 @@ project:
   output-dir: _site
   resources:
     - CNAME
+    - viz.js
 
 website:
-  title: "Passion Infinite — Model Insights"
+  title: "Passion Infinite | Model Insights"
   description: "Research notes on AI model visibility and behaviour, using open-source models and interpretability tools."
   site-url: https://passioninfinite.com
   repo-url: https://github.com/passionInfinite/passioninfinite.github.io
@@ -16,19 +17,19 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/passionInfinite
+      - icon: linkedin
+        href: https://www.linkedin.com/in/passioninfinite/
       - icon: rss
         href: index.xml
 
 format:
   html:
-    theme:
-      light: cosmo
-      dark: darkly
+    theme: theme.scss
     css: styles.css
     toc: true
     code-fold: show
     code-tools: true
-    highlight-style: github
+    highlight-style: a11y
 
 language:
   listing-page-no-matches: "The first post is on its way."

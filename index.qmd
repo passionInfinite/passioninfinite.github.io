@@ -1,9 +1,14 @@
 ---
-pagetitle: "Passion Infinite — Model Insights"
+pagetitle: "Passion Infinite | Model Insights"
 page-layout: full
 title-block-banner: false
 toc: false
 code-tools: false
+format:
+  html:
+    include-in-header:
+      - text: |
+          <script>document.documentElement.classList.add('js-reveal');setTimeout(function(){if(!window.__vizReady)document.documentElement.classList.remove('js-reveal')},4000)</script>
 listing:
   id: posts-list
   contents: posts
@@ -18,21 +23,136 @@ listing:
   fields: [date, title, description, categories, reading-time]
 ---
 
-::: {.hero}
+::: {.hero-grid}
+::: {.hero-copy}
 ::: {.hero-kicker}
-Interpretability research · open-source models · run on a laptop
+Model interpretability · Secure AI · Open research
 :::
 
-# Opening up language models to see how they actually work
+# Intelligence we can trust, because we can see inside it
 
-I'm an engineer on a path from full-stack and cloud to AI, now focused on model interpretability. Here I take concrete problem statements about model behaviour and test them directly inside open models, publishing all the code, so that AI becomes something we can look inside and make safer.
+AI is becoming the brain behind systems that read, decide and act for us. I believe that power has to be secure from the inside out. I'm working toward that by opening up open-source models, one problem statement at a time, and sharing everything I learn so the community can build on it.
 
 ::: {.hero-actions}
-[Read the posts](#latest-posts){.btn .btn-primary}
-[My journey](#my-journey){.btn .btn-outline-secondary}
+[Read the vision](#the-vision){.btn .btn-primary}
+[Latest posts](#latest-posts){.btn .btn-outline-secondary}
 :::
 :::
 
+::: {.hero-visual}
+```{=html}
+<figure class="stage stage-hero" id="stage-hero">
+  <canvas role="img" aria-label="A 3D neural network inside a closed box. Signals enter as a prompt and leave as an action. Opening the box reveals the circuit inside."></canvas>
+  <span class="stage-hint">Drag to rotate</span>
+  <div class="stage-controls">
+    <div class="seg" role="group" aria-label="Box state">
+      <button type="button" data-val="closed" aria-pressed="true">Closed box</button>
+      <button type="button" data-val="open" aria-pressed="false">Open the box</button>
+    </div>
+  </div>
+</figure>
+<p class="viz-caption" id="cap-hero">Prompt in, action out. What happens in between is a black box.</p>
+```
+:::
+:::
+
+::: {.reveal}
+## We can watch the agent. We can't ask the model why. {#the-gap .big}
+
+::: {.editorial}
+AI agents now read files, call tools and take actions. We've built good ways to watch them: tracing with OpenTelemetry, logs, metrics, guardrails, sandboxes and human review. All of it is necessary, and none of it goes away.
+
+But all of it answers the same kind of question: **what happened, when, how long, and which tool.** None of it can answer the one that matters most when something goes wrong: **why did the model decide to take that action?**
+
+The decision happens inside the model, and today that part is a black box. Even asking the model to explain itself is no guarantee, because the explanation it writes doesn't always reflect what actually drove its choice.
+
+Building security agents at work made this concrete for me. When an agent calls a finding exploitable, or decides to skip one, I can read its output but not its reasoning. For security work, that isn't good enough.
+:::
+:::
+
+::: {.reveal}
+```{=html}
+<div class="trace-label">Try it: step through an agent run</div>
+<div class="trace" id="trace">
+  <div class="trace-steps" id="trace-steps" role="group" aria-label="Steps in an agent run"></div>
+  <div class="trace-panels">
+    <div class="panel otel">
+      <h4>What observability shows</h4>
+      <dl id="otel-attrs"></dl>
+    </div>
+    <div class="panel why">
+      <h4>Why did the model do this?</h4>
+      <div id="why-body"></div>
+      <button type="button" class="btn-toggle" id="peek" aria-pressed="false">Peek inside (illustrative)</button>
+    </div>
+  </div>
+</div>
+```
+:::
+
+::: {.reveal}
+## Secure the brain, not just the perimeter {#the-vision .big}
+
+::: {.editorial}
+Most of the security tooling around AI agents works on the outside of the model: filter what goes in, restrict what comes out, watch everything in between. These layers are essential, and I want every one of them to stay.
+
+But I think we also need to change where we aim. The model is the brain of these systems. If we want **secure actions**, we need to understand, and eventually shape, how the brain arrives at them, not only catch the bad ones afterwards. That is what interpretability is: the science of looking inside a model. It is the domain where I believe I can contribute the most.
+:::
+:::
+
+::: {.reveal}
+```{=html}
+<figure class="stage stage-rings" id="stage-rings">
+  <canvas role="img" aria-label="A 3D model core surrounded by four tilted rings: guardrails, permissions and sandboxes, observability, and human review. Switching to the vision reveals the core's inner structure and turns its outputs from uncertain to secure."></canvas>
+  <span class="stage-hint">Drag to rotate</span>
+  <div class="stage-controls">
+    <div class="seg" role="group" aria-label="View">
+      <button type="button" data-val="today" aria-pressed="true">Today: secure around the model</button>
+      <button type="button" data-val="vision" aria-pressed="false">The vision: secure the core</button>
+    </div>
+  </div>
+</figure>
+<div class="legend-row" id="legend-rings" aria-label="The layers around the model"></div>
+<p class="viz-caption" id="cap-rings">Today: we wrap the model in layers. They are essential and they stay. But each one acts on actions after the model has already decided.</p>
+```
+
+::: {.editorial .small-note}
+Interpretability is young. Today's tools explain pieces of what a model does, not all of it. That is why every post here shows its method, its code and its limits.
+:::
+:::
+
+::: {.reveal}
+## A lifelong research partner, if we can trust it {#the-promise .big}
+
+::: {.editorial}
+If models produce secure, trustworthy actions, I believe this technology can change how we do science: researchers chasing long-standing diseases, open problems and breakthroughs faster, with a tireless helper beside them for their whole career.
+
+That future only arrives if we can trust the intelligence we hand the work to. Security isn't a brake on it. It's what makes it possible.
+:::
+
+::: {.pillars}
+::: {.pillar}
+### Long-standing diseases
+Helping researchers explore more ideas, faster, on problems that have resisted us for decades.
+:::
+
+::: {.pillar}
+### Open scientific problems
+A patient collaborator for the hardest questions, in labs and at kitchen tables alike.
+:::
+
+::: {.pillar}
+### A helper for a whole career
+An assistant that grows alongside a researcher for years, and that they can rely on.
+:::
+:::
+
+::: {.stand}
+**Where I stand.** I stay out of the AI-slop debate. What people do with these models depends on the person and the use case, and that isn't mine to police. I focus on what I can work on: making the model itself something we can inspect and trust.
+:::
+:::
+
+::: {.reveal}
 ## My journey {.section-title}
 
 ::: {.journey}
@@ -40,21 +160,21 @@ I'm an engineer on a path from full-stack and cloud to AI, now focused on model 
 [01]{.step-num}
 
 ### Full-stack engineer
-Building products end to end, and learning that software is only trustworthy when you can see what it's doing.
+Startups, RBC Ventures, Ownr and Manulife: web products built end to end, from a video-editing platform to business-formation tools.
 :::
 
 ::: {.step}
 [02]{.step-num}
 
 ### Cloud engineer
-Running systems at scale, where logs, metrics and tracing make the difference between guessing and knowing.
+At Deloitte I wrote infrastructure-as-code (Terraform, Ansible) for a health information exchange, cutting setup from months to 40 minutes.
 :::
 
 ::: {.step}
 [03]{.step-num}
 
 ### AI engineer
-Shipping LLM-powered features, and running into models that behave in ways no log or metric can explain.
+LLM agents for dental practices at Resonate AI, then agentic AI for security at RBC as a Principal AI Engineer.
 :::
 
 ::: {.step .step-now}
@@ -64,23 +184,37 @@ Shipping LLM-powered features, and running into models that behave in ways no lo
 Looking inside the model itself, to understand *why* it does what it does.
 :::
 :::
-
-::: {.why}
-::: {.why-text}
-## Why interpretability
-
-Every system I've worked on had a way to look inside it. With traditional software you read the code. With cloud systems you have logs, metrics and traces. With large language models, we ship systems we can't inspect: we see the input and the output, and the reasoning in between is a black box.
-
-That gap worries me. As models take on more consequential work, "it seemed to work in testing" isn't enough. Interpretability is the closest thing we have to observability for AI: tools to see what a model represents, where a behaviour comes from, and whether we can correct it.
 :::
 
-::: {.vision}
-[The vision]{.vision-label}
+::: {.reveal}
+## What I build in AI {.section-title}
 
-**AI we can trust because we can see inside it.** Making models safer starts with insight into the black box: finding the internals behind harmful or deceptive behaviour, and turning those findings into tools that let us catch and fix problems *before* they reach people.
+At RBC I lead a shift-left security transformation built on agentic AI: pipelines that take a product from **vulnerability discovery to automated remediation**, while keeping thousands of developers in the loop without breaking their flow. The aim is to reach 10,000+ engineers, and to get ready for a world where AI increasingly finds and exploits vulnerabilities on its own.
+
+::: {.pillars}
+::: {.pillar}
+### A harness for finding vulnerabilities
+Specialized agents that discover vulnerabilities, triage them and simulate exploitation, so problems are found before attackers find them.
+:::
+
+::: {.pillar}
+### Agent-to-agent workflows
+Using the A2A protocol, agents hand off work asynchronously, pause for human review at critical decisions, and resume without losing context.
+:::
+
+::: {.pillar}
+### MCP servers for developer tools
+Agents connected to live scan results, vulnerability databases and risk context at the point of coding, working from current data instead of stale context.
+:::
+
+::: {.pillar}
+### Humans in the loop
+Slow, manual security processes turned into coordinated multi-agent pipelines, with people reviewing the decisions that matter.
 :::
 :::
+:::
 
+::: {.reveal}
 ## What I research {.section-title}
 
 ::: {.pillars}
@@ -99,12 +233,44 @@ Finding the internal features and circuits behind refusals, sycophancy and mista
 Testing whether changing what's inside a model changes what it does.
 :::
 :::
+:::
 
 ## Latest posts
 
 ::: {#posts-list}
 :::
 
+::: {.reveal}
+## Let's build this in the open {#join .big}
+
+::: {.editorial}
+I'm learning and sharing in public, with code anyone can run on a laptop. If this vision resonates with you, there are a few ways to take part.
+:::
+
+::: {.pillars}
+::: {.pillar}
+### Reproduce a post
+Every post ships its code. Run it, break it, and tell me what you find.
+:::
+
+::: {.pillar}
+### Suggest a problem
+Know a behaviour that deserves a look inside the model? [Open an issue](https://github.com/passionInfinite/passioninfinite.github.io/issues/new) with the question.
+:::
+
+::: {.pillar}
+### Follow along
+Subscribe through [RSS](index.xml), or connect on [LinkedIn](https://www.linkedin.com/in/passioninfinite/).
+:::
+:::
+:::
+
 ::: {.toolbox}
 **Toolbox:** TransformerLens · SAELens · nnsight · Gemma Scope · Quarto. **Models:** Gemma 2, Llama, Qwen, Pythia, all on an Apple Silicon MacBook.
+
+Views are my own and do not represent my employer.
 :::
+
+```{=html}
+<script src="viz.js" defer></script>
+```
