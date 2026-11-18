@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Passion Infinite — Model Insights</title>
+<title>Passion Infinite | Model Insights</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -45,14 +45,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-5de16f5e46225c21e2daa90d340bf64f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-3218d7d29a29f08bc4fdf3802c3e3ca5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-5de16f5e46225c21e2daa90d340bf64f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-a43a9106707c50f56ffca1b4e7a17db1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-101058be43cae53724775cfb4c928eb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-cd840ef3bf37d4bb79ecf71e0d8e6483.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-101058be43cae53724775cfb4c928eb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9a11401e42a86e920128f82d68b5fdde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,6 +99,7 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<script>document.documentElement.classList.add('js-reveal');setTimeout(function(){if(!window.__vizReady)document.documentElement.classList.remove('js-reveal')},4000)</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -135,181 +132,12 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Passion Infinite — Model Insights" href="index.xml" data-external="1"><meta property="og:title" content="Passion Infinite — Model Insights">
-<meta property="og:site_name" content="Passion Infinite — Model Insights">
+<link rel="alternate" type="application/rss+xml" title="Passion Infinite | Model Insights" href="index.xml" data-external="1"><meta property="og:title" content="Passion Infinite | Model Insights">
+<meta property="og:description" content="Research notes on AI model visibility and behaviour, using open-source models and interpretability tools.">
+<meta property="og:site_name" content="Passion Infinite | Model Insights">
 </head>
 
-<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455).
-    // Not run on load: stylesheets are set before first paint there, and
-    // scrolling would undo the scroll to a URL fragment (#14973).
-    // The one pixel nudge keeps the reader where they were.
-    const refreshSafariScrollbar = () => {
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        const scrollY = window.scrollY;
-        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
-        setTimeout(() => {
-          window.scrollTo(0, scrollY);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      refreshSafariScrollbar();
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -317,7 +145,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Passion Infinite — Model Insights</span>
+    <span class="navbar-title">Passion Infinite | Model Insights</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -335,6 +163,11 @@ window.Quarto = {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/passioninfinite/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
     <a class="nav-link" href="./index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
@@ -342,7 +175,6 @@ window.Quarto = {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
             <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
@@ -359,41 +191,129 @@ window.Quarto = {
 
 
 
-
-<div class="hero">
+<div class="hero-grid">
+<div class="hero-copy">
 <div class="hero-kicker">
-<p>Interpretability research · open-source models · run on a laptop</p>
+<p>Model interpretability · Secure AI · Open research</p>
 </div>
-<section id="opening-up-language-models-to-see-how-they-actually-work" class="level1">
-<h1>Opening up language models to see how they actually work</h1>
-<p>I’m an engineer on a path from full-stack and cloud to AI, now focused on model interpretability. Here I take concrete problem statements about model behaviour and test them directly inside open models, publishing all the code, so that AI becomes something we can look inside and make safer.</p>
+<section id="intelligence-we-can-trust-because-we-can-see-inside-it" class="level1">
+<h1>Intelligence we can trust, because we can see inside it</h1>
+<p>AI is becoming the brain behind systems that read, decide and act for us. I believe that power has to be secure from the inside out. I’m working toward that by opening up open-source models, one problem statement at a time, and sharing everything I learn so the community can build on it.</p>
 <div class="hero-actions">
-<p><a href="#latest-posts" class="btn btn-primary">Read the posts</a> <a href="#my-journey" class="btn btn-outline-secondary">My journey</a></p>
+<p><a href="#the-vision" class="btn btn-primary">Read the vision</a> <a href="#latest-posts" class="btn btn-outline-secondary">Latest posts</a></p>
 </div>
 </section>
 </div>
-<section id="my-journey" class="level2 section-title">
+<div class="hero-visual">
+<figure class="stage stage-hero figure" id="stage-hero">
+  <canvas role="img" aria-label="A 3D neural network inside a closed box. Signals enter as a prompt and leave as an action. Opening the box reveals the circuit inside."></canvas>
+  <span class="stage-hint">Drag to rotate</span>
+  <div class="stage-controls">
+    <div class="seg" role="group" aria-label="Box state">
+      <button type="button" data-val="closed" aria-pressed="true">Closed box</button>
+      <button type="button" data-val="open" aria-pressed="false">Open the box</button>
+    </div>
+  </div>
+</figure>
+<p class="viz-caption" id="cap-hero">Prompt in, action out. What happens in between is a black box.</p>
+</div>
+</div>
+<section id="the-gap" class="level2 big reveal">
+<h2 class="big anchored" data-anchor-id="the-gap">We can watch the agent. We can’t ask the model why.</h2>
+<div class="editorial">
+<p>AI agents now read files, call tools and take actions. We’ve built good ways to watch them: tracing with OpenTelemetry, logs, metrics, guardrails, sandboxes and human review. All of it is necessary, and none of it goes away.</p>
+<p>But all of it answers the same kind of question: <strong>what happened, when, how long, and which tool.</strong> None of it can answer the one that matters most when something goes wrong: <strong>why did the model decide to take that action?</strong></p>
+<p>The decision happens inside the model, and today that part is a black box. Even asking the model to explain itself is no guarantee, because the explanation it writes doesn’t always reflect what actually drove its choice.</p>
+<p>Building security agents at work made this concrete for me. When an agent calls a finding exploitable, or decides to skip one, I can read its output but not its reasoning. For security work, that isn’t good enough.</p>
+</div>
+</section>
+<div class="reveal">
+<div class="trace-label">Try it: step through an agent run</div>
+<div class="trace" id="trace">
+  <div class="trace-steps" id="trace-steps" role="group" aria-label="Steps in an agent run"></div>
+  <div class="trace-panels">
+    <div class="panel otel">
+      <h4 class="anchored">What observability shows</h4>
+      <dl id="otel-attrs"></dl>
+    </div>
+    <div class="panel why">
+      <h4 class="anchored">Why did the model do this?</h4>
+      <div id="why-body"></div>
+      <button type="button" class="btn-toggle" id="peek" aria-pressed="false">Peek inside (illustrative)</button>
+    </div>
+  </div>
+</div>
+</div>
+<section id="the-vision" class="level2 big reveal">
+<h2 class="big anchored" data-anchor-id="the-vision">Secure the brain, not just the perimeter</h2>
+<div class="editorial">
+<p>Most of the security tooling around AI agents works on the outside of the model: filter what goes in, restrict what comes out, watch everything in between. These layers are essential, and I want every one of them to stay.</p>
+<p>But I think we also need to change where we aim. The model is the brain of these systems. If we want <strong>secure actions</strong>, we need to understand, and eventually shape, how the brain arrives at them, not only catch the bad ones afterwards. That is what interpretability is: the science of looking inside a model. It is the domain where I believe I can contribute the most.</p>
+</div>
+</section>
+<div class="reveal">
+<figure class="stage stage-rings figure" id="stage-rings">
+  <canvas role="img" aria-label="A 3D model core surrounded by four tilted rings: guardrails, permissions and sandboxes, observability, and human review. Switching to the vision reveals the core's inner structure and turns its outputs from uncertain to secure."></canvas>
+  <span class="stage-hint">Drag to rotate</span>
+  <div class="stage-controls">
+    <div class="seg" role="group" aria-label="View">
+      <button type="button" data-val="today" aria-pressed="true">Today: secure around the model</button>
+      <button type="button" data-val="vision" aria-pressed="false">The vision: secure the core</button>
+    </div>
+  </div>
+</figure>
+<div class="legend-row" id="legend-rings" aria-label="The layers around the model"></div>
+<p class="viz-caption" id="cap-rings">Today: we wrap the model in layers. They are essential and they stay. But each one acts on actions after the model has already decided.</p>
+<div class="editorial small-note">
+<p>Interpretability is young. Today’s tools explain pieces of what a model does, not all of it. That is why every post here shows its method, its code and its limits.</p>
+</div>
+</div>
+<section id="the-promise" class="level2 big reveal">
+<h2 class="big anchored" data-anchor-id="the-promise">A lifelong research partner, if we can trust it</h2>
+<div class="editorial">
+<p>If models produce secure, trustworthy actions, I believe this technology can change how we do science: researchers chasing long-standing diseases, open problems and breakthroughs faster, with a tireless helper beside them for their whole career.</p>
+<p>That future only arrives if we can trust the intelligence we hand the work to. Security isn’t a brake on it. It’s what makes it possible.</p>
+</div>
+<div class="pillars">
+<section id="long-standing-diseases" class="level3 pillar">
+<h3 class="anchored" data-anchor-id="long-standing-diseases">Long-standing diseases</h3>
+<p>Helping researchers explore more ideas, faster, on problems that have resisted us for decades.</p>
+</section>
+<section id="open-scientific-problems" class="level3 pillar">
+<h3 class="anchored" data-anchor-id="open-scientific-problems">Open scientific problems</h3>
+<p>A patient collaborator for the hardest questions, in labs and at kitchen tables alike.</p>
+</section>
+<section id="a-helper-for-a-whole-career" class="level3 pillar">
+<h3 class="anchored" data-anchor-id="a-helper-for-a-whole-career">A helper for a whole career</h3>
+<p>An assistant that grows alongside a researcher for years, and that they can rely on.</p>
+</section>
+</div>
+<div class="stand">
+<p><strong>Where I stand.</strong> I stay out of the AI-slop debate. What people do with these models depends on the person and the use case, and that isn’t mine to police. I focus on what I can work on: making the model itself something we can inspect and trust.</p>
+</div>
+</section>
+<section id="my-journey" class="level2 section-title reveal">
 <h2 class="section-title anchored" data-anchor-id="my-journey">My journey</h2>
 <div class="journey">
 <div class="step">
 <p><span class="step-num">01</span></p>
 <section id="full-stack-engineer" class="level3">
 <h3 class="anchored" data-anchor-id="full-stack-engineer">Full-stack engineer</h3>
-<p>Building products end to end, and learning that software is only trustworthy when you can see what it’s doing.</p>
+<p>Startups, RBC Ventures, Ownr and Manulife: web products built end to end, from a video-editing platform to business-formation tools.</p>
 </section>
 </div>
 <div class="step">
 <p><span class="step-num">02</span></p>
 <section id="cloud-engineer" class="level3">
 <h3 class="anchored" data-anchor-id="cloud-engineer">Cloud engineer</h3>
-<p>Running systems at scale, where logs, metrics and tracing make the difference between guessing and knowing.</p>
+<p>At Deloitte I wrote infrastructure-as-code (Terraform, Ansible) for a health information exchange, cutting setup from months to 40 minutes.</p>
 </section>
 </div>
 <div class="step">
 <p><span class="step-num">03</span></p>
 <section id="ai-engineer" class="level3">
 <h3 class="anchored" data-anchor-id="ai-engineer">AI engineer</h3>
-<p>Shipping LLM-powered features, and running into models that behave in ways no log or metric can explain.</p>
+<p>LLM agents for dental practices at Resonate AI, then agentic AI for security at RBC as a Principal AI Engineer.</p>
 </section>
 </div>
 <div class="step step-now">
@@ -405,18 +325,29 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<div class="why">
-<section id="why-interpretability" class="level2 why-text">
-<h2 class="anchored" data-anchor-id="why-interpretability">Why interpretability</h2>
-<p>Every system I’ve worked on had a way to look inside it. With traditional software you read the code. With cloud systems you have logs, metrics and traces. With large language models, we ship systems we can’t inspect: we see the input and the output, and the reasoning in between is a black box.</p>
-<p>That gap worries me. As models take on more consequential work, “it seemed to work in testing” isn’t enough. Interpretability is the closest thing we have to observability for AI: tools to see what a model represents, where a behaviour comes from, and whether we can correct it.</p>
+<section id="what-i-build-in-ai" class="level2 section-title reveal">
+<h2 class="section-title anchored" data-anchor-id="what-i-build-in-ai">What I build in AI</h2>
+<p>At RBC I lead a shift-left security transformation built on agentic AI: pipelines that take a product from <strong>vulnerability discovery to automated remediation</strong>, while keeping thousands of developers in the loop without breaking their flow. The aim is to reach 10,000+ engineers, and to get ready for a world where AI increasingly finds and exploits vulnerabilities on its own.</p>
+<div class="pillars">
+<section id="a-harness-for-finding-vulnerabilities" class="level3 pillar">
+<h3 class="anchored" data-anchor-id="a-harness-for-finding-vulnerabilities">A harness for finding vulnerabilities</h3>
+<p>Specialized agents that discover vulnerabilities, triage them and simulate exploitation, so problems are found before attackers find them.</p>
 </section>
-<div class="vision">
-<p><span class="vision-label">The vision</span></p>
-<p><strong>AI we can trust because we can see inside it.</strong> Making models safer starts with insight into the black box: finding the internals behind harmful or deceptive behaviour, and turning those findings into tools that let us catch and fix problems <em>before</em> they reach people.</p>
+<section id="agent-to-agent-workflows" class="level3 pillar">
+<h3 class="anchored" data-anchor-id="agent-to-agent-workflows">Agent-to-agent workflows</h3>
+<p>Using the A2A protocol, agents hand off work asynchronously, pause for human review at critical decisions, and resume without losing context.</p>
+</section>
+<section id="mcp-servers-for-developer-tools" class="level3 pillar">
+<h3 class="anchored" data-anchor-id="mcp-servers-for-developer-tools">MCP servers for developer tools</h3>
+<p>Agents connected to live scan results, vulnerability databases and risk context at the point of coding, working from current data instead of stale context.</p>
+</section>
+<section id="humans-in-the-loop" class="level3 pillar">
+<h3 class="anchored" data-anchor-id="humans-in-the-loop">Humans in the loop</h3>
+<p>Slow, manual security processes turned into coordinated multi-agent pipelines, with people reviewing the decisions that matter.</p>
+</section>
 </div>
-</div>
-<section id="what-i-research" class="level2 section-title">
+</section>
+<section id="what-i-research" class="level2 section-title reveal">
 <h2 class="section-title anchored" data-anchor-id="what-i-research">What I research</h2>
 <div class="pillars">
 <section id="where-knowledge-lives" class="level3 pillar">
@@ -441,65 +372,39 @@ window.Quarto = {
 </div>
 <div class="listing-no-matching d-none">The first post is on its way.</div>
 </div>
+</section>
+<section id="join" class="level2 big reveal">
+<h2 class="big anchored" data-anchor-id="join">Let’s build this in the open</h2>
+<div class="editorial">
+<p>I’m learning and sharing in public, with code anyone can run on a laptop. If this vision resonates with you, there are a few ways to take part.</p>
+</div>
+<div class="pillars">
+<section id="reproduce-a-post" class="level3 pillar">
+<h3 class="anchored" data-anchor-id="reproduce-a-post">Reproduce a post</h3>
+<p>Every post ships its code. Run it, break it, and tell me what you find.</p>
+</section>
+<section id="suggest-a-problem" class="level3 pillar">
+<h3 class="anchored" data-anchor-id="suggest-a-problem">Suggest a problem</h3>
+<p>Know a behaviour that deserves a look inside the model? <a href="https://github.com/passionInfinite/passioninfinite.github.io/issues/new">Open an issue</a> with the question.</p>
+</section>
+<section id="follow-along" class="level3 pillar">
+<h3 class="anchored" data-anchor-id="follow-along">Follow along</h3>
+<p>Subscribe through <a href="index.xml">RSS</a>, or connect on <a href="https://www.linkedin.com/in/passioninfinite/">LinkedIn</a>.</p>
+</section>
+</div>
+</section>
 <div class="toolbox">
 <p><strong>Toolbox:</strong> TransformerLens · SAELens · nnsight · Gemma Scope · Quarto. <strong>Models:</strong> Gemma 2, Llama, Qwen, Pythia, all on an Apple Silicon MacBook.</p>
+<p>Views are my own and do not represent my employer.</p>
 </div>
+<script src="viz.js" defer=""></script>
 
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const toggle = window.document.createElement('button');
-      toggle.type = "button";
-      toggle.setAttribute("role", "switch");
-      toggle.setAttribute("aria-checked", "false");
-      toggle.classList.add('top-right');
-      toggle.classList.add('quarto-color-scheme-toggle');
-      toggle.setAttribute("aria-label", "Toggle dark mode");
-      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      toggle.appendChild(i);
-      // Put the toggle in a landmark of its own, so that landmark navigation
-      // can reach it.
-      //
-      // The container is always a fresh direct child of body, and the toggle is
-      // never moved into page furniture that the theme or the author controls.
-      // The toggle is positioned against the page, so any ancestor that
-      // establishes a containing block captures it: a positioned element or a
-      // grid for position: absolute, and transform, filter, will-change or
-      // contain for position: fixed. A direct child of body has none of these
-      // to inherit, and the shift when one appears is silent and visual.
-      //
-      // ARIA says a document should have at most one banner, and axe reports a
-      // duplicate whether or not the banners carry distinct labels. So use a
-      // header when the page has no banner yet, and a named region otherwise.
-      //
-      // A header is a banner wherever it sits, unless it is inside sectioning
-      // content, so this cannot just look at the children of body: a custom
-      // page layout wraps the title block header in a plain div. An explicit
-      // role="banner" always counts.
-      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
-      const hasBanner = Array.from(
-        window.document.querySelectorAll('header:not([role]), [role="banner"]')
-      ).some(function(el) {
-        return el.hasAttribute("role") || el.closest(sectioning) === null;
-      });
-      const container = window.document.createElement(hasBanner ? "div" : "header");
-      if (hasBanner) {
-        container.setAttribute("role", "region");
-        container.setAttribute("aria-label", "Toggle dark mode");
-      }
-      container.classList.add('quarto-color-scheme-toggle-container');
-      container.appendChild(toggle);
-      window.document.body.appendChild(container);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
