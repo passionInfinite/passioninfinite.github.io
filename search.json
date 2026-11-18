@@ -1,16 +1,23 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Model Insights",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
     "text": "This blog documents independent research on AI model visibility: understanding what language models represent internally and why they behave the way they do.\nEvery post starts from a concrete problem statement, tests it with interpretability tools (TransformerLens, SAELens, nnsight, Gemma Scope) on open-source models, and ships the full code so anyone can reproduce it.\nAll experiments run locally on a MacBook (Apple Silicon, 48 GB)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Opening up language models to see how they actually work",
+    "section": "",
+    "text": "Interpretability research · open-source models · run on a laptop\n\n\n\nModels are increasingly trusted with real decisions, yet we can rarely see why they say what they say. This blog takes concrete problem statements about model behaviour and tests them directly inside open models, using interpretability tools, with all the code published so anyone can reproduce it.\n\nRead the posts About this project"
+  },
+  {
+    "objectID": "index.html#latest-posts",
+    "href": "index.html#latest-posts",
+    "title": "Opening up language models to see how they actually work",
+    "section": "Latest posts",
+    "text": "Latest posts\n\n\n\n\nThe first post is on its way.\n\n\nToolbox: TransformerLens · SAELens · nnsight · Gemma Scope · Quarto. Models: Gemma 2, Llama, Qwen, Pythia, all on an Apple Silicon MacBook."
   }
 ]
