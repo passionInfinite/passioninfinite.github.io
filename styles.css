@@ -52,6 +52,59 @@
   opacity: 0.75;
 }
 
+/* Journey timeline */
+h2.section-title { font-size: 1.6rem; font-weight: 700; margin-top: 0; }
+.journey {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0 3.5rem;
+  counter-reset: step;
+}
+.step {
+  position: relative;
+  padding: 1.2rem 1.3rem 1.3rem;
+  border-top: 3px solid var(--bs-border-color);
+}
+.step.step-now { border-top-color: var(--bs-primary); }
+.step-num {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+}
+.step.step-now .step-num { color: var(--bs-primary); opacity: 1; }
+.step h3 { font-size: 1.1rem; font-weight: 650; margin: 0.35rem 0 0.5rem; }
+.step p { font-size: 0.95rem; opacity: 0.8; margin: 0; }
+
+/* Why + vision */
+.why {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 2.5rem;
+  align-items: start;
+  margin: 0 0 4rem;
+}
+@media (max-width: 800px) { .why { grid-template-columns: 1fr; gap: 1.5rem; } }
+.why-text h2 { font-size: 1.6rem; font-weight: 700; margin-top: 0; border-bottom: none; }
+.why-text p { font-size: 1.05rem; line-height: 1.65; }
+.vision {
+  background: rgba(var(--bs-primary-rgb), 0.07);
+  border-left: 4px solid var(--bs-primary);
+  border-radius: 0.5rem;
+  padding: 1.5rem 1.6rem;
+}
+.vision-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bs-primary);
+  margin-bottom: 0.6rem;
+}
+.vision p { font-size: 1.05rem; line-height: 1.6; margin: 0; }
+
 /* Grid listing cards */
 .quarto-grid-item { border-radius: 0.75rem; }
 .quarto-listing .list:not(:has(*)) + .listing-no-matching {

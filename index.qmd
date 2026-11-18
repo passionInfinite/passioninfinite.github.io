@@ -25,13 +25,63 @@ Interpretability research · open-source models · run on a laptop
 
 # Opening up language models to see how they actually work
 
-Models are increasingly trusted with real decisions, yet we can rarely see *why* they say what they say. This blog takes concrete problem statements about model behaviour and tests them directly inside open models, using interpretability tools, with all the code published so anyone can reproduce it.
+I'm an engineer on a path from full-stack and cloud to AI, now focused on model interpretability. Here I take concrete problem statements about model behaviour and test them directly inside open models, publishing all the code, so that AI becomes something we can look inside and make safer.
 
 ::: {.hero-actions}
 [Read the posts](#latest-posts){.btn .btn-primary}
-[About this project](about.qmd){.btn .btn-outline-secondary}
+[My journey](#my-journey){.btn .btn-outline-secondary}
 :::
 :::
+
+## My journey {.section-title}
+
+::: {.journey}
+::: {.step}
+[01]{.step-num}
+
+### Full-stack engineer
+Building products end to end, and learning that software is only trustworthy when you can see what it's doing.
+:::
+
+::: {.step}
+[02]{.step-num}
+
+### Cloud engineer
+Running systems at scale, where logs, metrics and tracing make the difference between guessing and knowing.
+:::
+
+::: {.step}
+[03]{.step-num}
+
+### AI engineer
+Shipping LLM-powered features, and running into models that behave in ways no log or metric can explain.
+:::
+
+::: {.step .step-now}
+[04]{.step-num}
+
+### Model interpretability
+Looking inside the model itself, to understand *why* it does what it does.
+:::
+:::
+
+::: {.why}
+::: {.why-text}
+## Why interpretability
+
+Every system I've worked on had a way to look inside it. With traditional software you read the code. With cloud systems you have logs, metrics and traces. With large language models, we ship systems we can't inspect: we see the input and the output, and the reasoning in between is a black box.
+
+That gap worries me. As models take on more consequential work, "it seemed to work in testing" isn't enough. Interpretability is the closest thing we have to observability for AI: tools to see what a model represents, where a behaviour comes from, and whether we can correct it.
+:::
+
+::: {.vision}
+[The vision]{.vision-label}
+
+**AI we can trust because we can see inside it.** Making models safer starts with insight into the black box: finding the internals behind harmful or deceptive behaviour, and turning those findings into tools that let us catch and fix problems *before* they reach people.
+:::
+:::
+
+## What I research {.section-title}
 
 ::: {.pillars}
 ::: {.pillar}
