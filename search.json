@@ -53,7 +53,7 @@
     "href": "index.html#what-i-research",
     "title": "Intelligence we can trust, because we can see inside it",
     "section": "What I research",
-    "text": "What I research\n\n\nWhere knowledge lives\nTracing at which layer a model “knows” a fact, and what it was considering before.\n\n\nWhy models behave as they do\nFinding the internal features and circuits behind refusals, sycophancy and mistakes.\n\n\nSteering and control\nTesting whether changing what’s inside a model changes what it does."
+    "text": "What I research\n\n\nWhere knowledge lives\nTracing at which layer a model “knows” a fact, and what it was considering before.\n\n\nWhy models behave as they do\nFinding the internal features and circuits behind refusals, sycophancy and mistakes.\n\n\nSteering and control\nTesting whether changing what’s inside a model changes what it does.\n\n\nCatching bad training data\nTracing a bad behaviour back to the training data behind it, finding and removing the internal features it created, and labeling that data so the next training run doesn’t bring it back."
   },
   {
     "objectID": "index.html#latest-posts",
