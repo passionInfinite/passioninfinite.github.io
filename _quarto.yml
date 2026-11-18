@@ -7,7 +7,7 @@ project:
 website:
   title: "Passion Infinite — Model Insights"
   description: "Research notes on AI model visibility and behaviour, using open-source models and interpretability tools."
-  site-url: https://passioninfinite.dev
+  site-url: https://passioninfinite.com
   repo-url: https://github.com/passionInfinite/passioninfinite.github.io
   repo-actions: [issue]
   open-graph: true
