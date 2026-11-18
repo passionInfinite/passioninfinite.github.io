@@ -174,7 +174,7 @@ Infrastructure-as-code (Terraform, Ansible) for a health information exchange, c
 [03]{.step-num}
 
 ### AI engineer
-LLM agents for healthcare practices, then agentic AI for application security at enterprise scale. Co-founder of DayAlign.
+LLM agents for healthcare practices, then agentic AI for application security at enterprise scale. Co-founder of [DayAlign](https://dayalign.com).
 :::
 
 ::: {.step .step-now}
@@ -191,7 +191,7 @@ Looking inside the model itself, to understand *why* it does what it does.
 
 In my day job I lead a shift-left security transformation built on agentic AI: pipelines that take a product from **vulnerability discovery to automated remediation**, while keeping thousands of developers in the loop without breaking their flow. The aim is to scale it across a large engineering organization, and to get ready for a world where AI increasingly finds and exploits vulnerabilities on its own.
 
-I'm also a co-founder of DayAlign.
+I'm also a co-founder of [DayAlign](https://dayalign.com).
 
 ::: {.pillars}
 ::: {.pillar}
@@ -233,6 +233,11 @@ Finding the internal features and circuits behind refusals, sycophancy and mista
 ::: {.pillar}
 ### Steering and control
 Testing whether changing what's inside a model changes what it does.
+:::
+
+::: {.pillar}
+### Catching bad training data
+Tracing a bad behaviour back to the training data behind it, finding and removing the internal features it created, and labeling that data so the next training run doesn't bring it back.
 :::
 :::
 :::
