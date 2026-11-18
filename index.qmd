@@ -1,5 +1,5 @@
 ---
-pagetitle: "Passion Infinite | Model Insights"
+pagetitle: "Hardik Patel | Model Interpretability"
 page-layout: full
 title-block-banner: false
 toc: false

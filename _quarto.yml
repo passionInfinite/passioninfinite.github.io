@@ -6,7 +6,7 @@ project:
     - viz.js
 
 website:
-  title: "Passion Infinite | Model Insights"
+  title: "Hardik Patel | Model Interpretability"
   description: "Research notes on AI model visibility and behaviour, using open-source models and interpretability tools."
   site-url: https://passioninfinite.com
   repo-url: https://github.com/passionInfinite/passioninfinite.github.io
