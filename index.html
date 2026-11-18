@@ -50,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-5de16f5e46225c21e2daa90d340bf64f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-15e4a2c30a3cb6da4df4c9adc40acc1d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6e5c08b05e695f661fc321dccb71b95c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-15e4a2c30a3cb6da4df4c9adc40acc1d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-101058be43cae53724775cfb4c928eb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-cd840ef3bf37d4bb79ecf71e0d8e6483.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-101058be43cae53724775cfb4c928eb1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -366,12 +366,58 @@ window.Quarto = {
 </div>
 <section id="opening-up-language-models-to-see-how-they-actually-work" class="level1">
 <h1>Opening up language models to see how they actually work</h1>
-<p>Models are increasingly trusted with real decisions, yet we can rarely see <em>why</em> they say what they say. This blog takes concrete problem statements about model behaviour and tests them directly inside open models, using interpretability tools, with all the code published so anyone can reproduce it.</p>
+<p>I’m an engineer on a path from full-stack and cloud to AI, now focused on model interpretability. Here I take concrete problem statements about model behaviour and test them directly inside open models, publishing all the code, so that AI becomes something we can look inside and make safer.</p>
 <div class="hero-actions">
-<p><a href="#latest-posts" class="btn btn-primary">Read the posts</a> <a href="./about.html" class="btn btn-outline-secondary">About this project</a></p>
+<p><a href="#latest-posts" class="btn btn-primary">Read the posts</a> <a href="#my-journey" class="btn btn-outline-secondary">My journey</a></p>
 </div>
 </section>
 </div>
+<section id="my-journey" class="level2 section-title">
+<h2 class="section-title anchored" data-anchor-id="my-journey">My journey</h2>
+<div class="journey">
+<div class="step">
+<p><span class="step-num">01</span></p>
+<section id="full-stack-engineer" class="level3">
+<h3 class="anchored" data-anchor-id="full-stack-engineer">Full-stack engineer</h3>
+<p>Building products end to end, and learning that software is only trustworthy when you can see what it’s doing.</p>
+</section>
+</div>
+<div class="step">
+<p><span class="step-num">02</span></p>
+<section id="cloud-engineer" class="level3">
+<h3 class="anchored" data-anchor-id="cloud-engineer">Cloud engineer</h3>
+<p>Running systems at scale, where logs, metrics and tracing make the difference between guessing and knowing.</p>
+</section>
+</div>
+<div class="step">
+<p><span class="step-num">03</span></p>
+<section id="ai-engineer" class="level3">
+<h3 class="anchored" data-anchor-id="ai-engineer">AI engineer</h3>
+<p>Shipping LLM-powered features, and running into models that behave in ways no log or metric can explain.</p>
+</section>
+</div>
+<div class="step step-now">
+<p><span class="step-num">04</span></p>
+<section id="model-interpretability" class="level3">
+<h3 class="anchored" data-anchor-id="model-interpretability">Model interpretability</h3>
+<p>Looking inside the model itself, to understand <em>why</em> it does what it does.</p>
+</section>
+</div>
+</div>
+</section>
+<div class="why">
+<section id="why-interpretability" class="level2 why-text">
+<h2 class="anchored" data-anchor-id="why-interpretability">Why interpretability</h2>
+<p>Every system I’ve worked on had a way to look inside it. With traditional software you read the code. With cloud systems you have logs, metrics and traces. With large language models, we ship systems we can’t inspect: we see the input and the output, and the reasoning in between is a black box.</p>
+<p>That gap worries me. As models take on more consequential work, “it seemed to work in testing” isn’t enough. Interpretability is the closest thing we have to observability for AI: tools to see what a model represents, where a behaviour comes from, and whether we can correct it.</p>
+</section>
+<div class="vision">
+<p><span class="vision-label">The vision</span></p>
+<p><strong>AI we can trust because we can see inside it.</strong> Making models safer starts with insight into the black box: finding the internals behind harmful or deceptive behaviour, and turning those findings into tools that let us catch and fix problems <em>before</em> they reach people.</p>
+</div>
+</div>
+<section id="what-i-research" class="level2 section-title">
+<h2 class="section-title anchored" data-anchor-id="what-i-research">What I research</h2>
 <div class="pillars">
 <section id="where-knowledge-lives" class="level3 pillar">
 <h3 class="anchored" data-anchor-id="where-knowledge-lives">Where knowledge lives</h3>
@@ -386,6 +432,7 @@ window.Quarto = {
 <p>Testing whether changing what’s inside a model changes what it does.</p>
 </section>
 </div>
+</section>
 <section id="latest-posts" class="level2">
 <h2 class="anchored" data-anchor-id="latest-posts">Latest posts</h2>
 <div id="listing-posts-list" class="quarto-listing quarto-listing-container-grid">

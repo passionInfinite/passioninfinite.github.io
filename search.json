@@ -1,17 +1,31 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This blog documents independent research on AI model visibility: understanding what language models represent internally and why they behave the way they do.\nEvery post starts from a concrete problem statement, tests it with interpretability tools (TransformerLens, SAELens, nnsight, Gemma Scope) on open-source models, and ships the full code so anyone can reproduce it.\nAll experiments run locally on a MacBook (Apple Silicon, 48 GB)."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Opening up language models to see how they actually work",
     "section": "",
-    "text": "Interpretability research · open-source models · run on a laptop\n\n\n\nModels are increasingly trusted with real decisions, yet we can rarely see why they say what they say. This blog takes concrete problem statements about model behaviour and tests them directly inside open models, using interpretability tools, with all the code published so anyone can reproduce it.\n\nRead the posts About this project"
+    "text": "Interpretability research · open-source models · run on a laptop\n\n\n\nI’m an engineer on a path from full-stack and cloud to AI, now focused on model interpretability. Here I take concrete problem statements about model behaviour and test them directly inside open models, publishing all the code, so that AI becomes something we can look inside and make safer.\n\nRead the posts My journey"
+  },
+  {
+    "objectID": "index.html#my-journey",
+    "href": "index.html#my-journey",
+    "title": "Opening up language models to see how they actually work",
+    "section": "My journey",
+    "text": "My journey\n\n\n01\n\nFull-stack engineer\nBuilding products end to end, and learning that software is only trustworthy when you can see what it’s doing.\n\n\n\n02\n\nCloud engineer\nRunning systems at scale, where logs, metrics and tracing make the difference between guessing and knowing.\n\n\n\n03\n\nAI engineer\nShipping LLM-powered features, and running into models that behave in ways no log or metric can explain.\n\n\n\n04\n\nModel interpretability\nLooking inside the model itself, to understand why it does what it does."
+  },
+  {
+    "objectID": "index.html#why-interpretability",
+    "href": "index.html#why-interpretability",
+    "title": "Opening up language models to see how they actually work",
+    "section": "Why interpretability",
+    "text": "Why interpretability\nEvery system I’ve worked on had a way to look inside it. With traditional software you read the code. With cloud systems you have logs, metrics and traces. With large language models, we ship systems we can’t inspect: we see the input and the output, and the reasoning in between is a black box.\nThat gap worries me. As models take on more consequential work, “it seemed to work in testing” isn’t enough. Interpretability is the closest thing we have to observability for AI: tools to see what a model represents, where a behaviour comes from, and whether we can correct it."
+  },
+  {
+    "objectID": "index.html#what-i-research",
+    "href": "index.html#what-i-research",
+    "title": "Opening up language models to see how they actually work",
+    "section": "What I research",
+    "text": "What I research\n\n\nWhere knowledge lives\nTracing at which layer a model “knows” a fact, and what it was considering before.\n\n\nWhy models behave as they do\nFinding the internal features and circuits behind refusals, sycophancy and mistakes.\n\n\nSteering and control\nTesting whether changing what’s inside a model changes what it does."
   },
   {
     "objectID": "index.html#latest-posts",
@@ -19,5 +33,12 @@
     "title": "Opening up language models to see how they actually work",
     "section": "Latest posts",
     "text": "Latest posts\n\n\n\n\nThe first post is on its way.\n\n\nToolbox: TransformerLens · SAELens · nnsight · Gemma Scope · Quarto. Models: Gemma 2, Llama, Qwen, Pythia, all on an Apple Silicon MacBook."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This blog documents independent research on AI model visibility: understanding what language models represent internally and why they behave the way they do.\nEvery post starts from a concrete problem statement, tests it with interpretability tools (TransformerLens, SAELens, nnsight, Gemma Scope) on open-source models, and ships the full code so anyone can reproduce it.\nAll experiments run locally on a MacBook (Apple Silicon, 48 GB)."
   }
 ]
