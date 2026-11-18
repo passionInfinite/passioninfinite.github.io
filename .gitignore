@@ -6,3 +6,6 @@ __pycache__/
 .DS_Store
 *.safetensors
 # Keep _freeze/ committed: it holds the outputs you computed on your Mac.
+# Local previews of drafts
+_drafts/**/*.html
+_drafts/**/*_files/

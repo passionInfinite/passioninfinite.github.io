@@ -3,7 +3,6 @@ title: "TITLE: phrase it as the question you're answering"
 description: "One sentence on what you tested and what you found."
 date: YYYY-MM-DD
 categories: [method, topic, model]
-draft: true
 jupyter: python3
 ---
 

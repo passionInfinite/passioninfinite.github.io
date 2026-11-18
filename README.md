@@ -27,14 +27,23 @@ GitHub Pages must serve from the `gh-pages` branch: **Settings → Pages → Dep
 
 ## Writing a post
 
+Unfinished posts live in `_drafts/`. Quarto skips folders starting with `_`, so GitHub never tries to run them.
+
 ```bash
-mkdir -p posts/2026-12-01-my-topic
-cp _templates/post-template.qmd posts/2026-12-01-my-topic/index.qmd
-quarto preview posts/2026-12-01-my-topic/index.qmd                        # live preview while writing
-quarto render posts/2026-12-01-my-topic/index.qmd                         # runs the code, updates _freeze/
+mkdir -p _drafts/2026-12-01-my-topic
+cp _templates/post-template.qmd _drafts/2026-12-01-my-topic/index.qmd
+quarto preview _drafts/2026-12-01-my-topic/index.qmd      # live preview while writing
 ```
 
-When it's ready, delete the `draft: true` line, then commit everything (including `_freeze/`) and push.
+To publish, move it into `posts/`, run it once on your Mac, and commit the saved results in `_freeze/`:
+
+```bash
+git mv _drafts/2026-12-01-my-topic posts/            # or plain mv if never committed
+quarto render posts/2026-12-01-my-topic/index.qmd    # runs the code, writes _freeze/
+git add posts _freeze && git commit -m "Publish: my topic" && git push
+```
+
+GitHub Actions then rebuilds the site from the saved results (no Python or models needed there).
 
 ## Structure
 
@@ -42,7 +51,9 @@ When it's ready, delete the `draft: true` line, then commit everything (includin
 _quarto.yml                 site config
 index.qmd                   post listing (home page) + RSS feed
 about.qmd
-posts/                      one folder per post
+posts/                      published posts, one folder each
+_drafts/                    work in progress (not built)
+_freeze/                    saved code outputs from your Mac (commit this)
 _templates/post-template.qmd
 .github/workflows/publish.yml
 ```
